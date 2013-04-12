@@ -1,0 +1,10 @@
+name 'thbe-ssmtp'
+version '0.1.0'
+
+author 'Thomas Bendler <project@bendler-net.de>'
+license 'GPLv3'
+project_page 'https://github.com/thbe/ssmtp.git'
+source 'git@github.com:thbe/ssmtp.git'
+summary 'sSMTP management module'
+description 'sSMTP management module'
+dependency 'puppetlabs/stdlib', '>=3.2.0'
