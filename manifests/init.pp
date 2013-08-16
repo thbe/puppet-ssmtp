@@ -1,19 +1,39 @@
-# Class: ssmtp
+# == Class: ssmtp
 #
-# This module manages sSMTP
+# This module manages SSMTP.
 #
-# Parameters:
-#  defaultMta = if set to ssmtp, this class will be used
-#  rootEmail  = Mail address that get root mails
-#  mailHub    = server that handle outgoing mail
-#  revaliases = Array of reverse aliases
+# === Parameters
 #
-# Actions:
+# Document parameters here.
 #
-# Requires: see Modulefile
+# [*defaultMta*]
+#   if set to ssmtp, this class will be used
 #
-# Sample Usage:
-#  include ssmtp{ mailHub=mail.example.com }
+# [*rootEmail*]
+#   Mail address that get root mails
+#
+# [*mailHub*]
+#   server that handle outgoing mail
+#
+# [*revaliases*]
+#   Array of reverse aliases
+#
+# === Variables
+#
+# === Examples
+#
+#  class { '::ssmtp':
+#    mailHub => 'mail.example.local',
+#    rootEmail => 'john.doe@example.local',
+#  }
+#
+# === Authors
+#
+# Author Thomas Bendler <project@bendler-net.de>
+#
+# === Copyright
+#
+# Copyright 2013 Thomas Bendler
 #
 class ssmtp (
   $defaultMta = $ssmtp::params::defaultMta,
