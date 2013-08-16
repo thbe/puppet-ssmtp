@@ -11,6 +11,7 @@
 # Sample Usage: include ssmtp::config
 #
 class ssmtp::config {
+
   # sSMTP configuration
   file {
     $ssmtp::params::configSsmtpConf:

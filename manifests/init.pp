@@ -20,12 +20,16 @@ class ssmtp (
   $rootEmail  = $ssmtp::params::rootEmail,
   $mailHub    = $ssmtp::params::mailHub,
   $revaliases = $ssmtp::params::revaliases) inherits ssmtp::params {
+
   # Include Puppetlabs standard library
   include stdlib
 
   # Start workflow
   if $ssmtp::params::linux {
-    anchor { 'ssmtp::start': } -> class { 'ssmtp::package': } ~> class { 'ssmtp::config'
-    : } ~> class { 'ssmtp::service': } ~> anchor { 'ssmtp::end': }
+    anchor { 'ssmtp::start': }
+    -> class { 'ssmtp::package': }
+    ~> class { 'ssmtp::config': }
+    ~> class { 'ssmtp::service': }
+    ~> anchor { 'ssmtp::end': }
   }
 }

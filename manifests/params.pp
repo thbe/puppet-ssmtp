@@ -11,6 +11,7 @@
 # Sample Usage: include ssmtp::params
 #
 class ssmtp::params {
+
   # Operating system specific definitions
   case $::osfamily {
     'RedHat' : {

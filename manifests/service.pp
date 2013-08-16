@@ -11,6 +11,7 @@
 # Sample Usage: include ssmtp::service
 #
 class ssmtp::service {
+
   # sSMTP service configuration
   if $ssmtp::defaultMta == 'ssmtp' {
     exec { 'alternatives --set mta /usr/sbin/sendmail.ssmtp':
