@@ -20,7 +20,7 @@ class ssmtp::config {
       owner   => root,
       group   => root,
       path    => $ssmtp::params::configSsmtpConf,
-      content => template('ssmtp/etc/ssmtp.conf.erb');
+      content => template($ssmtp::params::configSsmtpConfTemplate);
 
     $ssmtp::params::configRevaliasesConf:
       ensure  => present,
@@ -28,6 +28,6 @@ class ssmtp::config {
       owner   => root,
       group   => root,
       path    => $ssmtp::params::configRevaliasesConf,
-      content => template('ssmtp/etc/revaliases.erb');
+      content => template($ssmtp::params::configRevaliasesConfTemplate);
   }
 }
