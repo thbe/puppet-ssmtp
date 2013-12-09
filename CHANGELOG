@@ -4,3 +4,6 @@
 0.2.0 2013-08-16 thbe <project@bendler-net.de>
 * Prepare for forge
 * Documentation according to NTP module from puppetlabs
+
+0.2.1 2013-12-09 thbe <project@bendler-net.de>
+* Lower version for dependency puppetlabs/stdlib
