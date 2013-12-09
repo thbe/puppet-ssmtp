@@ -16,7 +16,7 @@ class ssmtp::config {
   file {
     $ssmtp::params::configSsmtpConf:
       ensure  => present,
-      mode    => 644,
+      mode    => '0644',
       owner   => root,
       group   => root,
       path    => $ssmtp::params::configSsmtpConf,
@@ -24,7 +24,7 @@ class ssmtp::config {
 
     $ssmtp::params::configRevaliasesConf:
       ensure  => present,
-      mode    => 644,
+      mode    => '0644',
       owner   => root,
       group   => root,
       path    => $ssmtp::params::configRevaliasesConf,
