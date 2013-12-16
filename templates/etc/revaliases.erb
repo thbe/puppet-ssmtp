@@ -2,7 +2,7 @@
 #
 # sSMTP revaliases configuation file
 #
-# Managed: Puppet <%= puppetversion %> on <%= puppetmaster %>
+# Managed: Puppet <%= @puppetversion %><% if @puppetmaster -%> on <%= @puppetmaster %><% end %>
 #
 # Format:  local_account:outgoing_address:mailhub
 #
