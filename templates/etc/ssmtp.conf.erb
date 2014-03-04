@@ -5,7 +5,7 @@
 # managed by Puppet, local changes will be overwritten
 #
 
-root=<%= scope.lookupvar('ssmtp::rootEmail') %>
-mailhub=<%= scope.lookupvar('ssmtp::mailHub') %>
+root=<%= @rootEmail %>
+mailhub=<%= @mailHub %>
 
 FromLineOverride=YES
