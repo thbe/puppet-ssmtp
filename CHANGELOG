@@ -15,11 +15,6 @@
  * Changed variable names in templates
  * Add test for common configuration
 
-0.2.4 2014-04-07 thbe <project@bendler-net.de>
- * Switched anchor logic
-
-0.2.5 2014-04-07 thbe <project@bendler-net.de>
- * Fixed typo
-
-0.2.6 2014-04-07 thbe <project@bendler-net.de>
- * Fixed another typo
+0.3.0 2014-04-07 thbe <project@bendler-net.de>
+ * Removed puppetlabs/stdlib dependency
+ * Use contain instead of anchor
