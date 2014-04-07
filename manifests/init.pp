@@ -50,7 +50,7 @@ class ssmtp (
 
   # Start workflow
   if $ssmtp::params::linux {
-    Anchor['ssmpt::begin']  ->
+    Anchor['ssmp::begin']  ->
     Class['ssmtp::package'] ->
     Class['ssmtp::config'] ->
     Class['ssmtp::service'] ->

@@ -1,5 +1,5 @@
 name 'thbe-ssmtp'
-version '0.2.4'
+version '0.2.5'
 
 author 'Thomas Bendler <project@bendler-net.de>'
 license 'GPLv3'
