@@ -14,3 +14,6 @@
 0.2.3 2014-03-04 thbe <project@bendler-net.de>
  * Changed variable names in templates
  * Add test for common configuration
+
+0.2.4 2014-04-07 thbe <project@bendler-net.de>
+ * Switched anchor logic

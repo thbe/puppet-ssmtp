@@ -44,12 +44,16 @@ class ssmtp (
   # Include Puppetlabs standard library
   include stdlib
 
+  # Containment
+  anchor { 'ssmtp::begin': }
+  anchor { 'ssmtp::end': }
+
   # Start workflow
   if $ssmtp::params::linux {
-    anchor { 'ssmtp::start': }
-    -> class { 'ssmtp::package': }
-    ~> class { 'ssmtp::config': }
-    ~> class { 'ssmtp::service': }
-    ~> anchor { 'ssmtp::end': }
+    Anchor['ssmpt::begin']  ->
+    Class['ssmtp::package'] ->
+    Class['ssmtp::config'] ->
+    Class['ssmtp::service'] ->
+    Anchor['ssmpt::end']
   }
 }
