@@ -40,6 +40,9 @@ class ssmtp (
   $rootEmail  = $ssmtp::params::rootEmail,
   $mailHub    = $ssmtp::params::mailHub,
   $revaliases = $ssmtp::params::revaliases) inherits ssmtp::params {
+  # Require class yum to have the relevant repositories in place
+  require yum
+
   # Start workflow
   if $ssmtp::params::linux {
     # Containment
