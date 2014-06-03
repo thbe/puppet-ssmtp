@@ -40,7 +40,6 @@ class ssmtp (
   $rootEmail  = $ssmtp::params::rootEmail,
   $mailHub    = $ssmtp::params::mailHub,
   $revaliases = $ssmtp::params::revaliases) inherits ssmtp::params {
-
   # Start workflow
   if $ssmtp::params::linux {
     # Containment
@@ -49,7 +48,7 @@ class ssmtp (
     contain ssmtp::service
 
     Class['ssmtp::package'] ->
-    Class['ssmtp::config']  ->
+    Class['ssmtp::config'] ->
     Class['ssmtp::service']
   }
 }
