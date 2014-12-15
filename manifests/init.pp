@@ -33,7 +33,7 @@
 #
 # === Copyright
 #
-# Copyright 2013 Thomas Bendler
+# Copyright 2014 Thomas Bendler
 #
 class ssmtp (
   $defaultMta = $ssmtp::params::defaultMta,
