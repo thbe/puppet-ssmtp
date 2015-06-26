@@ -32,17 +32,17 @@ class ssmtp::config {
   file {
     $ssmtp::params::configSsmtpConf:
       ensure  => present,
-      mode    => '0644',
-      owner   => root,
-      group   => root,
+      mode    => '0640',
+      owner   => 'root',
+      group   => 'mail',
       path    => $ssmtp::params::configSsmtpConf,
       content => template($ssmtp::params::configSsmtpConfTemplate);
 
     $ssmtp::params::configRevaliasesConf:
       ensure  => present,
       mode    => '0644',
-      owner   => root,
-      group   => root,
+      owner   => 'root',
+      group   => 'root',
       path    => $ssmtp::params::configRevaliasesConf,
       content => template($ssmtp::params::configRevaliasesConfTemplate);
   }
