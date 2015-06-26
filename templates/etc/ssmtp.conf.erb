@@ -8,4 +8,32 @@
 root=<%= @rootEmail %>
 mailhub=<%= @mailHub %>
 
-FromLineOverride=YES
+FromLineOverride=<%= @fromlineoverride %>
+
+<% if @authuser -%>
+AuthUser=<%= @authuser %>
+<% end -%>
+<%- if @authpass -%>
+AuthPass=<%= @authpass %>
+<% end -%>
+<% if @authmethod -%>
+AuthMethod=<%= @authmethod %>
+<% end -%>
+<% if @usetls -%>
+UseTLS=<%= @usetls %>
+<% end -%>
+<% if @usestartls -%>
+UseSTARTTLS=<%= @starttls %>
+<% end -%>
+<% if @tlscert -%>
+TLSCert=<%= @tlscert %>
+<% end -%>
+<% if @tlskey -%>
+TLSKey=<%= @tlskey %>
+<% end -%>
+<% if @tlscafile -%>
+TLS_CA_File=<%= @tlscafile %>
+<% end -%>
+<% if @tlscadir -%>
+TLS_CA_Dir=<%= @tlscadir %>
+<% end -%>
