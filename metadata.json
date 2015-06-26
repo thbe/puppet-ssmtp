@@ -1,6 +1,6 @@
 {
   "name": "thbe-ssmtp",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "author": "thbe",
   "summary": "sSMTP management module",
   "license": "GPL-3.0",
@@ -12,6 +12,7 @@
     { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6.0", "7.0" ] }
   ],
   "dependencies": [
-    { "name": "thbe-yum", "version_range": ">= 0.4.10" }
+    { "name": "thbe-yum", "version_range": ">= 0.4.10" },
+    { "name": "puppetlabs-stdlib", "version_range": ">= 1.0.0" }
   ]
 }
