@@ -42,7 +42,7 @@ can use:
 
 ```puppet
 class { '::ssmtp':
-  mailHub => 'mail.example.local',
+  mailhub => 'mail.example.local',
 }
 ```
 
@@ -62,8 +62,8 @@ include '::ssmtp'
 
 ```puppet
 class { '::ssmtp':
-  mailHub => 'mail.example.local',
-  rootEmail => 'john.doe@example.local',
+  mailhub => 'mail.example.local',
+  rootemail => 'john.doe@example.local',
 }
 ```
 
@@ -81,15 +81,15 @@ class { '::ssmtp':
 
 The following parameters are available in the ssmtp module
 
-####`defaultMta`
+####`defaultmta`
 
 Replace the default MTA with ssmtp if set to ssmtp.
 
-####`rootEmail`
+####`rootemail`
 
 Specify which Email address should recieve all mails from root.
 
-####`mailHub`
+####`mailhub`
 
 Define the mail server which should deliver all mails.
 
@@ -107,7 +107,7 @@ The module has been tested on:
 * RedHat Enterprise Linux 5/6
 * Scientific Linux 5/6
 
-Testing on other platforms has been light and cannot be guaranteed. 
+Testing on other platforms has been light and cannot be guaranteed.
 
 
 ##Development
