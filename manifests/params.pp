@@ -18,13 +18,13 @@ class ssmtp::params {
       $linux = true
 
       # Package definition
-      $packageCommon = 'ssmtp'
+      $packagecommon = 'ssmtp'
 
       # Config definition
-      $configSsmtpConf              = '/etc/ssmtp/ssmtp.conf'
-      $configSsmtpConfTemplate      = 'ssmtp/etc/ssmtp.conf.erb'
-      $configRevaliasesConf         = '/etc/ssmtp/revaliases'
-      $configRevaliasesConfTemplate = 'ssmtp/etc/revaliases.erb'
+      $configssmtpconf              = '/etc/ssmtp/ssmtp.conf'
+      $configssmtpconftemplate      = 'ssmtp/etc/ssmtp.conf.erb'
+      $configrevaliasesconf         = '/etc/ssmtp/revaliases'
+      $configrevaliasesconftemplate = 'ssmtp/etc/revaliases.erb'
     }
     default  : {
       $linux = false
@@ -32,9 +32,9 @@ class ssmtp::params {
   }
 
   # sSMTP definitions
-  $defaultMta       = 'none'
-  $rootEmail        = 'john.doe@example.local'
-  $mailHub          = 'mail.example.local'
+  $defaultmta       = 'none'
+  $rootemail        = 'john.doe@example.local'
+  $mailhub          = 'mail.example.local'
   $revaliases       = ['# Custom revaliases']
   $fromlineoverride = 'YES'
 }

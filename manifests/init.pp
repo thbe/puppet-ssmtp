@@ -6,13 +6,13 @@
 #
 # Document parameters here.
 #
-# [*defaultMta*]
+# [*defaultmta*]
 #   if set to ssmtp, this class will be used
 #
-# [*rootEmail*]
+# [*rootemail*]
 #   Mail address that get root mails
 #
-# [*mailHub*]
+# [*mailhub*]
 #   server that handle outgoing mail
 #
 # [fromlineoverride]
@@ -53,8 +53,8 @@
 # === Examples
 #
 #  class { '::ssmtp':
-#    mailHub => 'mail.example.local',
-#    rootEmail => 'john.doe@example.local',
+#    mailhub => 'mail.example.local',
+#    rootemail => 'john.doe@example.local',
 #  }
 #
 # === Authors
@@ -67,9 +67,9 @@
 # Copyright 2015 Thomas Bendler
 #
 class ssmtp (
-  $defaultMta       = $ssmtp::params::defaultMta,
-  $rootEmail        = $ssmtp::params::rootEmail,
-  $mailHub          = $ssmtp::params::mailHub,
+  $defaultmta       = $ssmtp::params::defaultmta,
+  $rootemail        = $ssmtp::params::rootemail,
+  $mailhub          = $ssmtp::params::mailhub,
   $revaliases       = $ssmtp::params::revaliases,
   $fromlineoverride = $ssmtp::params::fromlineoverride,
   $authuser         = undef,
