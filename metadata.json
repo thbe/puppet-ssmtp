@@ -1,6 +1,6 @@
 {
   "name": "thbe-ssmtp",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": "thbe",
   "summary": "sSMTP management module",
   "license": "GPL-3.0",
