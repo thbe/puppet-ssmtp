@@ -34,6 +34,15 @@ the possibility to recieve mails from external systems.
 * ssmtp configuration file.
 * ssmtp alternative service configuration.
 
+### Setup requirements
+
+You need to activate the EPEL repository before you can setup the SSMTP instance.
+If you use a rpm based system from the RedHat family you can use my yum module:
+
+```puppet
+class { "::yum": repo_epel => true }
+```
+
 ###Beginning with ssmtp
 
 include '::ssmtp' is enough to get you up and running if the parameters point to
@@ -42,7 +51,7 @@ can use:
 
 ```puppet
 class { '::ssmtp':
-  mailhub => 'mail.example.local',
+  mail_hub => 'mail.example.local',
 }
 ```
 
@@ -62,8 +71,8 @@ include '::ssmtp'
 
 ```puppet
 class { '::ssmtp':
-  mailhub => 'mail.example.local',
-  rootemail => 'john.doe@example.local',
+  mail_hub => 'mail.example.local',
+  root_email => 'john.doe@example.local',
 }
 ```
 
@@ -81,15 +90,15 @@ class { '::ssmtp':
 
 The following parameters are available in the ssmtp module
 
-####`defaultmta`
+####`default_mta`
 
 Replace the default MTA with ssmtp if set to ssmtp.
 
-####`rootemail`
+####`root_email`
 
 Specify which Email address should recieve all mails from root.
 
-####`mailhub`
+####`mail_hub`
 
 Define the mail server which should deliver all mails.
 
@@ -104,8 +113,9 @@ This module has been built on and tested against Puppet 3.4 and higher.
 
 The module has been tested on:
 
-* RedHat Enterprise Linux 5/6
-* Scientific Linux 5/6
+* RedHat Enterprise Linux 5, 6, 7
+* CentOS Linux 5, 6, 7
+* Scientific Linux 5, 6
 
 Testing on other platforms has been light and cannot be guaranteed.
 

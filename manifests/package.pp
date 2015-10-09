@@ -11,5 +11,5 @@
 # Sample Usage: include ssmtp::package
 #
 class ssmtp::package {
-  package { $ssmtp::params::packagecommon: ensure => installed; }
+  package { $ssmtp::params::package_ssmtp: ensure => installed; }
 }

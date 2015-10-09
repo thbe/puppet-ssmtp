@@ -15,26 +15,26 @@ class ssmtp::params {
   # Operating system specific definitions
   case $::osfamily {
     'RedHat' : {
-      $linux = true
+      $linux                            = true
 
       # Package definition
-      $packagecommon = 'ssmtp'
+      $package_ssmtp                    = 'ssmtp'
 
       # Config definition
-      $configssmtpconf              = '/etc/ssmtp/ssmtp.conf'
-      $configssmtpconftemplate      = 'ssmtp/etc/ssmtp.conf.erb'
-      $configrevaliasesconf         = '/etc/ssmtp/revaliases'
-      $configrevaliasesconftemplate = 'ssmtp/etc/revaliases.erb'
+      $config_ssmtp_conf                = '/etc/ssmtp/ssmtp.conf'
+      $config_ssmtp_conf_template       = 'ssmtp/etc/ssmtp.conf.erb'
+      $config_revaliases_conf           = '/etc/ssmtp/revaliases'
+      $config_revaliases_conf_template  = 'ssmtp/etc/revaliases.erb'
     }
     default  : {
-      $linux = false
+      $linux                            = false
     }
   }
 
   # sSMTP definitions
-  $defaultmta       = 'none'
-  $rootemail        = 'john.doe@example.local'
-  $mailhub          = 'mail.example.local'
-  $revaliases       = ['# Custom revaliases']
-  $fromlineoverride = 'YES'
+  $default_mta         = 'none'
+  $root_email          = 'john.doe@example.local'
+  $mail_hub            = 'mail.example.local'
+  $revaliases          = ['# Custom revaliases']
+  $from_line_override  = 'YES'
 }

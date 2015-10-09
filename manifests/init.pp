@@ -6,16 +6,16 @@
 #
 # Document parameters here.
 #
-# [*defaultmta*]
+# [*default_mta*]
 #   if set to ssmtp, this class will be used
 #
-# [*rootemail*]
+# [*root_email*]
 #   Mail address that get root mails
 #
-# [*mailhub*]
+# [*mail_hub*]
 #   server that handle outgoing mail
 #
-# [fromlineoverride]
+# [from_line_override]
 #   Default: YES
 #
 # [*revaliases*]
@@ -53,8 +53,8 @@
 # === Examples
 #
 #  class { '::ssmtp':
-#    mailhub => 'mail.example.local',
-#    rootemail => 'john.doe@example.local',
+#    mail_hub   => 'mail.example.local',
+#    root_email => 'john.doe@example.local',
 #  }
 #
 # === Authors
@@ -67,27 +67,21 @@
 # Copyright 2015 Thomas Bendler
 #
 class ssmtp (
-  $defaultmta       = $ssmtp::params::defaultmta,
-  $rootemail        = $ssmtp::params::rootemail,
-  $mailhub          = $ssmtp::params::mailhub,
-  $revaliases       = $ssmtp::params::revaliases,
-  $fromlineoverride = $ssmtp::params::fromlineoverride,
-  $authuser         = undef,
-  $authpass         = undef,
-  $authmethod       = undef,
-  $usetls           = undef,
-  $usestarttls      = undef,
-  $tlscert          = undef,
-  $tlskey           = undef,
-  $tlscafile        = undef,
-  $tlscadir         = undef,
-  $require_yum      = true,
+  $default_mta        = $ssmtp::params::defaultmta,
+  $root_email         = $ssmtp::params::rootemail,
+  $mail_hub           = $ssmtp::params::mailhub,
+  $revaliases         = $ssmtp::params::revaliases,
+  $from_line_override = $ssmtp::params::fromlineoverride,
+  $authuser           = undef,
+  $authpass           = undef,
+  $authmethod         = undef,
+  $usetls             = undef,
+  $usestarttls        = undef,
+  $tlscert            = undef,
+  $tlskey             = undef,
+  $tlscafile          = undef,
+  $tlscadir           = undef,
 ) inherits ssmtp::params {
-
-  if str2bool($require_yum) {
-    # Require class yum to have the relevant repositories in place
-    require yum
-  }
 
   # Start workflow
   if $ssmtp::params::linux {

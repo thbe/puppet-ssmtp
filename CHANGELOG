@@ -1,3 +1,6 @@
+0.4.2 2015-10-09 thbe <project@bendler-net.de>
+ * Remove yum module dependency
+
 0.4.1 2015-10-05 thbe <project@bendler-net.de>
  * Fix variable style
 

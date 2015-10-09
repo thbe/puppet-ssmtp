@@ -12,38 +12,38 @@
 #
 class ssmtp::config {
   # make parameters available in local scope for usage in templates
-  $defaultmta       = $ssmtp::defaultmta
-  $rootemail        = $ssmtp::rootemail
-  $mailhub          = $ssmtp::mailhub
-  $revaliases       = $ssmtp::revaliases
-  $fromlineoverride = $ssmtp::fromlineoverride
-  $authuser         = $ssmtp::authuser
-  $authpass         = $ssmtp::authpass
-  $authmethod       = $ssmtp::authmethod
-  $usetls           = $ssmtp::usetls
-  $usestarttls      = $ssmtp::usestarttls
-  $tlscert          = $ssmtp::tlscert
-  $tlskey           = $ssmtp::tlskey
-  $tlscafile        = $ssmtp::tlscafile
-  $tlscadir         = $ssmtp::tlscadir
+  $default_mta        = $ssmtp::default_mta
+  $root_email         = $ssmtp::root_email
+  $mail_hub           = $ssmtp::mail_hub
+  $revaliases         = $ssmtp::revaliases
+  $from_line_override = $ssmtp::from_line_override
+  $authuser           = $ssmtp::authuser
+  $authpass           = $ssmtp::authpass
+  $authmethod         = $ssmtp::authmethod
+  $usetls             = $ssmtp::usetls
+  $usestarttls        = $ssmtp::usestarttls
+  $tlscert            = $ssmtp::tlscert
+  $tlskey             = $ssmtp::tlskey
+  $tlscafile          = $ssmtp::tlscafile
+  $tlscadir           = $ssmtp::tlscadir
 
 
   # sSMTP configuration
   file {
-    $ssmtp::params::configssmtpconf:
+    $ssmtp::params::config_ssmtp_conf:
       ensure  => file,
       mode    => '0640',
       owner   => 'root',
       group   => 'mail',
-      path    => $ssmtp::params::configssmtpconf,
-      content => template($ssmtp::params::configssmtpconftemplate);
+      path    => $ssmtp::params::config_ssmtp_conf,
+      content => template($ssmtp::params::config_ssmtp_conf_template);
 
-    $ssmtp::params::configrevaliasesconf:
+    $ssmtp::params::config_revaliases_conf:
       ensure  => file,
       mode    => '0644',
       owner   => 'root',
       group   => 'root',
-      path    => $ssmtp::params::configrevaliasesconf,
-      content => template($ssmtp::params::configrevaliasesconftemplate);
+      path    => $ssmtp::params::config_revaliases_conf,
+      content => template($ssmtp::params::config_revaliases_conf_template);
   }
 }

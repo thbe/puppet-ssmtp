@@ -13,7 +13,7 @@
 class ssmtp::service {
 
   # sSMTP service configuration
-  if $ssmtp::defaultmta == 'ssmtp' {
+  if $ssmtp::default_mta == 'ssmtp' {
     exec { 'alternatives --set mta /usr/sbin/sendmail.ssmtp':
       path   => '/bin:/sbin:/usr/bin:/usr/sbin',
       unless => 'test /etc/alternatives/mta -ef /usr/sbin/sendmail.ssmtp',
