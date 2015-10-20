@@ -79,8 +79,8 @@ class ssmtp (
   $usestarttls        = undef,
   $tlscert            = undef,
   $tlskey             = undef,
-  $tlscafile          = undef,
-  $tlscadir           = undef,
+  $tls_ca_file        = undef,
+  $tls_ca_dir         = undef,
 ) inherits ssmtp::params {
 
   # Start workflow

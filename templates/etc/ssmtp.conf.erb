@@ -5,10 +5,10 @@
 # managed by Puppet, local changes will be overwritten
 #
 
-root=<%= @rootemail %>
-mailhub=<%= @mailhub %>
+root=<%= @root_email %>
+mailhub=<%= @mail_hub %>
 
-FromLineOverride=<%= @fromlineoverride %>
+FromLineOverride=<%= @from_line_override %>
 
 <% if @authuser -%>
 AuthUser=<%= @authuser %>
@@ -31,9 +31,9 @@ TLSCert=<%= @tlscert %>
 <% if @tlskey -%>
 TLSKey=<%= @tlskey %>
 <% end -%>
-<% if @tlscafile -%>
-TLS_CA_File=<%= @tlscafile %>
+<% if @tls_ca_file -%>
+TLS_CA_File=<%= @tls_ca_file %>
 <% end -%>
-<% if @tlscadir -%>
-TLS_CA_Dir=<%= @tlscadir %>
+<% if @tls_ca_dir -%>
+TLS_CA_Dir=<%= @tls_ca_dir %>
 <% end -%>
