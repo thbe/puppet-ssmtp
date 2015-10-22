@@ -39,7 +39,7 @@ the possibility to recieve mails from external systems.
 ### Setup requirements
 
 You need to activate the EPEL repository before you can setup the SSMTP instance.
-If you use a rpm based system from the RedHat family you can use my yum module:
+If you use a rpm based system from the RedHat family you can use my yum module (thbe-yum):
 
 ```puppet
 class { "::yum": repo_epel => true }
