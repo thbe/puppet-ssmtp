@@ -1,3 +1,6 @@
+0.5.5 2015-10-22 thbe <project@bendler-net.de>
+ * Add Travis CI support
+
 0.5.0 2015-10-22 thbe <project@bendler-net.de>
  * Add Ubuntu support
 
