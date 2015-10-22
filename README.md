@@ -1,5 +1,7 @@
 #ssmtp
 
+[![Build Status](https://travis-ci.org/thbe/puppet-ssmtp.png?branch=master)](https://travis-ci.org/thbe/puppet-ssmtp)
+
 ####Table of Contents
 
 1. [Overview](#overview)
