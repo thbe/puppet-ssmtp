@@ -1,7 +1,6 @@
 language: ruby
-cache: bundler
 bundler_args:
-script: "bundle exec rake SPEC_OPTS='--color --format documentation'"
+script: "bundle exec rake lint && bundle exec rake spec"
 matrix:
   fast_finish: true
   include:
