@@ -33,4 +33,4 @@ end
 
 PuppetLint.configuration.send('disable_autoloader_layout')
 
-task :default => [:validate, :lint, :spec]
+task :default => [:lint, :spec]
