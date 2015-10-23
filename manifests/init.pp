@@ -104,4 +104,7 @@ class ssmtp (
     Class['ssmtp::config'] ->
     Class['ssmtp::service']
   }
+  else {
+    warning('The current operating system is not supported!')
+  }
 }
