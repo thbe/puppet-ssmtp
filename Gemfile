@@ -11,5 +11,5 @@ gem 'puppetlabs_spec_helper'
 gem 'puppet-lint'
 gem 'metadata-json-lint'
 
-gem 'facter', *location_for(facterversion)
-gem 'puppet', *location_for(puppetversion)
+gem 'facter', facterversion
+gem 'puppet', puppetversion
