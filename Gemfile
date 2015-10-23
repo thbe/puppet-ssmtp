@@ -7,9 +7,25 @@ else
 end
 
 gem 'rake'
-gem 'puppet-lint'
+gem 'rspec'
 gem 'rspec-puppet'
 gem 'rspec-puppet-facts'
+
 gem 'puppetlabs_spec_helper'
+
+gem 'puppet-lint'
 gem 'metadata-json-lint'
+
+gem 'facter'
 gem 'puppet', puppetversion
+
+gem 'pry'
+gem 'simplecov'
+
+gem 'mocha'
+gem 'serverspec'
+
+gem 'beaker'
+gem 'beaker-rspec'
+gem 'beaker-rspec'
+gem 'beaker-puppet_install_helper'
