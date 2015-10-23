@@ -1,6 +1,6 @@
 language: ruby
 bundler_args:
-script: "bundle exec rake lint && bundle exec rake spec"
+script: "bundle exec rake lint"
 matrix:
   fast_finish: true
   include:
