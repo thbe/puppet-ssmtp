@@ -1,15 +1,30 @@
-source ENV['GEM_SOURCE'] || 'https://rubygems.org'
+source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
-facterversion = ENV['FACTER_GEM_VERSION'] || '2.4.4'
-puppetversion = ENV['PUPPET_GEM_VERSION'] || '3.8.3'
+group :development, :unit_tests do
+  gem 'rake',                    :require => false
+  gem 'rspec-core', '3.1.7',     :require => false
+  gem 'rspec-puppet', '~> 2.1',  :require => false
+  gem 'puppetlabs_spec_helper',  :require => false
+  gem 'puppet-lint',             :require => false
+  gem 'simplecov',               :require => false
+  gem 'puppet_facts',            :require => false
+  gem 'json',                    :require => false
+end
 
-gem 'rake'
-gem 'rspec'
-gem 'rspec-puppet'
-gem 'rspec-puppet-facts'
-gem 'puppetlabs_spec_helper'
-gem 'puppet-lint'
-gem 'metadata-json-lint'
+group :system_tests do
+  gem 'beaker-rspec',                 :require => false
+  gem 'beaker-puppet_install_helper', :require => false
+  gem 'serverspec',                   :require => false
+end
 
-gem 'facter', facterversion
-gem 'puppet', puppetversion
+if facterversion = ENV['FACTER_GEM_VERSION']
+  gem 'facter', facterversion, :require => false
+else
+  gem 'facter', :require => false
+end
+
+if puppetversion = ENV['PUPPET_GEM_VERSION']
+  gem 'puppet', puppetversion, :require => false
+else
+  gem 'puppet', :require => false
+end
