@@ -8,6 +8,7 @@ group :development, :unit_tests do
   gem 'puppetlabs_spec_helper',  :require => false
   gem 'puppet-lint',             :require => false
   gem 'simplecov',               :require => false
+  gem 'simplecov-console',       :require => false
   gem 'puppet_facts',            :require => false
   gem 'json',                    :require => false
   gem 'metadata-json-lint',      :require => false

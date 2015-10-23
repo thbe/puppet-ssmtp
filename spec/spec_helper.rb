@@ -1,7 +1,18 @@
 require 'puppetlabs_spec_helper/module_spec_helper'
+require 'simplecov'
+require 'simplecov-console'
 require 'rspec-puppet'
 require 'rspec-puppet-facts'
 include RspecPuppetFacts
+
+SimpleCov.start do
+  add_filter '/spec'
+  add_filter '/vendor'
+  formatter SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    SimpleCov::Formatter::Console
+  ]
+end
 
 fixture_path = File.expand_path(File.join(__FILE__, '..', 'fixtures'))
 
