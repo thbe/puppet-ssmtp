@@ -1,6 +1,8 @@
 #ssmtp
 
 [![Build Status](https://travis-ci.org/thbe/puppet-ssmtp.png?branch=master)](https://travis-ci.org/thbe/puppet-ssmtp)
+[![Puppet Forge](https://img.shields.io/puppetforge/v/thbe/ssmtp.svg)](https://forge.puppetlabs.com/thbe/ssmtp)
+[![Coverage Status](https://coveralls.io/repos/biemond/biemond-oradb/badge.png?branch=master)](https://coveralls.io/r/biemond/biemond-oradb?branch=master)
 
 ####Table of Contents
 

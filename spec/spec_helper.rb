@@ -2,8 +2,12 @@ require 'puppetlabs_spec_helper/module_spec_helper'
 require 'simplecov'
 require 'simplecov-console'
 require 'rspec-puppet'
+
 require 'rspec-puppet-facts'
 include RspecPuppetFacts
+
+require 'coveralls'
+Coveralls.wear!
 
 SimpleCov.start do
   add_filter '/spec'
