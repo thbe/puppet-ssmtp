@@ -12,6 +12,7 @@ group :development, :unit_tests do
   gem 'puppet_facts',            :require => false
   gem 'json',                    :require => false
   gem 'metadata-json-lint',      :require => false
+  gem 'coveralls',               :require => false
 end
 
 group :system_tests do
