@@ -2,6 +2,7 @@ source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
 group :development, :test do
   gem 'rake',                         :require => false
+  gem 'dpl',                          :require => false
   gem 'coveralls',                    :require => false
   gem 'puppet-lint',                  :require => false
   gem 'puppet_facts',                 :require => false
