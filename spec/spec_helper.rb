@@ -1,3 +1,12 @@
+require 'coveralls'
+Coveralls.wear! do
+  add_filter '/pkg/'
+  add_filter '/spec/'
+  add_filter '/tests/'
+end
+
+require 'puppetlabs_spec_helper/module_spec_helper'
+
 require 'rspec-puppet'
 require 'rspec-puppet-facts'
 include RspecPuppetFacts
@@ -5,16 +14,7 @@ include RspecPuppetFacts
 require 'simplecov'
 require 'simplecov-console'
 
-require 'coveralls'
-Coveralls.wear!
-require 'puppetlabs_spec_helper/module_spec_helper'
-
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-SimpleCov.start do
-  add_filter '/spec'
-  add_filter '/vendor'
-  add_filter 'app/secrets'
-end
 
 fixture_path = File.expand_path(File.join(__FILE__, '..', 'fixtures'))
 
