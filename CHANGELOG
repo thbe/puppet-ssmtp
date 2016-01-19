@@ -1,3 +1,6 @@
+0.5.8 2016-01-19 thbe <project@bendler-net.de>
+ * Fix wrong variable scope
+
 0.5.7 2016-01-19 thbe <project@bendler-net.de>
  * Add merge request to fix wrong parameter name
 

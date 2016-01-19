@@ -17,6 +17,8 @@ class ssmtp::config {
   $mail_hub           = $ssmtp::mail_hub
   $revaliases         = $ssmtp::revaliases
   $from_line_override = $ssmtp::from_line_override
+  $hostname           = $ssmtp::hostname
+  $rewritedomain      = $ssmtp::rewritedomain
   $authuser           = $ssmtp::authuser
   $authpass           = $ssmtp::authpass
   $authmethod         = $ssmtp::authmethod
