@@ -5,10 +5,17 @@
 # managed by Puppet, local changes will be overwritten
 #
 
-root=<%= @root_email %>
-mailhub=<%= @mail_hub %>
+Root=<%= @root_email %>
+Mailhub=<%= @mail_hub %>
 
 FromLineOverride=<%= @from_line_override %>
+
+<% if @hostname -%>
+Hostname=<%= @hostname %>
+<% end -%>
+<% if @rewritedomain -%>
+RewriteDomain=<%= @rewritedomain %>
+<% end -%>
 
 <% if @authuser -%>
 AuthUser=<%= @authuser %>

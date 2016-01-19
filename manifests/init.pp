@@ -21,6 +21,12 @@
 # * `revaliases`
 #  Array of reverse aliases
 #
+# * `hostname`
+#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
+#
+# * `rewritedomain`
+#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
+#
 # * `authuser`
 #  Override ssmtp.conf parameter, see man 5 ssmtp.conf
 #
@@ -73,7 +79,7 @@
 # Copyright
 # ---------
 #
-# Copyright 2015 Thomas Bendler, unless otherwise noted.
+# Copyright 2016 Thomas Bendler, unless otherwise noted.
 #
 class ssmtp (
   $default_mta        = $ssmtp::params::default_mta,
@@ -81,6 +87,8 @@ class ssmtp (
   $mail_hub           = $ssmtp::params::mail_hub,
   $revaliases         = $ssmtp::params::revaliases,
   $from_line_override = $ssmtp::params::from_line_override,
+  $hostname           = undef,
+  $rewritedomain      = undef,
   $authuser           = undef,
   $authpass           = undef,
   $authmethod         = undef,

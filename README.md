@@ -110,6 +110,49 @@ Define the mail server which should deliver all mails.
 
 Array to define the reverse aliases.
 
+####`hostname`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`rewritedomain`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`authuser`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`authpass`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`authmethod`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`tlscert`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`tlskey`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`authuser`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`tlscafile`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`tlscadir`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
+####`require_yum` (bool, default=true)
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
 
 ##Limitations
 
