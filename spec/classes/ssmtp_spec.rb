@@ -28,7 +28,7 @@ describe "ssmtp" do
             'ensure'  => 'file',
             'owner'   => 'root',
             'group'   => 'mail',
-            'mode'    => '0644',
+            'mode'    => '0640',
           )
         end
         it do
