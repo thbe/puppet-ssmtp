@@ -48,9 +48,17 @@ class ssmtp::params {
   }
 
   # sSMTP definitions
-  $default_mta         = 'none'
-  $root_email          = 'john.doe@example.local'
-  $mail_hub            = 'mail.example.local'
-  $revaliases          = ['# Custom revaliases']
-  $from_line_override  = 'YES'
+  $default_mta           = 'none'
+  $root_email            = 'john.doe@example.local'
+  $mail_hub              = 'mail.example.local'
+  $revaliases            = ['# Custom revaliases']
+  $from_line_override    = 'YES'
+
+  # Config file mode & ownership
+  $ssmtp_conf_mode       = '0644'
+  $ssmtp_conf_owner      = 'root'
+  $ssmtp_conf_group      = 'mail'
+  $revaliases_conf_mode  = '0644'
+  $revaliases_conf_owner = 'root'
+  $revaliases_conf_group = 'root'
 }
