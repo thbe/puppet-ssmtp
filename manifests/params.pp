@@ -48,7 +48,7 @@ class ssmtp::params {
   }
 
   # sSMTP definitions
-  $default_mta            = 'none'
+  $default_mta            = false
   $root_email             = 'john.doe@example.local'
   $mail_hub               = 'mail.example.local'
   $revaliases             = ['# Custom revaliases']

@@ -6,10 +6,12 @@
 # Parameters
 # ----------
 #
-# * `default_mta`
-#  If set to ssmtp, ssmtp will be set as default mta
+# [*default_mta*]
+# Boolean. If set to ssmtp, ssmtp will be set as default mta
+# Default: false
+# Valid values: true, false
 #
-# * `root_email`
+# [*root_email*]
 #  Mail address that get root mails
 #
 # * `mail_hub`
@@ -114,9 +116,9 @@ class ssmtp (
     contain ssmtp::config
     contain ssmtp::service
 
-    Class['ssmtp::package'] ->
-    Class['ssmtp::config'] ->
-    Class['ssmtp::service']
+    Class['ssmtp::package']
+    -> Class['ssmtp::config']
+    -> Class['ssmtp::service']
   }
   else {
     warning('The current operating system is not supported!')
