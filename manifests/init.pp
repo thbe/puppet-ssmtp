@@ -81,7 +81,7 @@
 # Copyright
 # ---------
 #
-# Copyright 2016 Thomas Bendler, unless otherwise noted.
+# Copyright 2017 Thomas Bendler, unless otherwise noted.
 #
 class ssmtp (
   $default_mta           = $ssmtp::params::default_mta,
@@ -110,9 +110,9 @@ class ssmtp (
 
   # Start workflow
   if $ssmtp::params::linux {
-    include ::ssmtp::package
-    include ::ssmtp::config
-    include ::ssmtp::service
+    contain ::ssmtp::package
+    contain ::ssmtp::config
+    contain ::ssmtp::service
 
     Class['ssmtp::package']
     -> Class['ssmtp::config']

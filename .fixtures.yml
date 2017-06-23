@@ -1,0 +1,5 @@
+fixtures:
+  symlinks:
+    ssmtp: "#{source_dir}"
+  repositories:
+  forge_modules:
