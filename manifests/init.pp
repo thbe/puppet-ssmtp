@@ -112,7 +112,8 @@ class ssmtp (
   if $ssmtp::params::linux {
     class{ '::ssmtp::package': }
     -> class{ '::ssmtp::config': }
-    -> Class['ssmtp::service']
+    -> class{ '::ssmtp::service': }
+    -> Class['ssmtp']
   }
   else {
     warning('The current operating system is not supported!')
