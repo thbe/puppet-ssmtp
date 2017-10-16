@@ -2,13 +2,13 @@ require 'spec_helper_acceptance'
 
 describe 'ssmtp' do
   let(:manifest) {
-    <<-EOS
+    <<-EndOfClassDefinition
 class { 'ssmtp': 
   default_mta => 'ssmtp',
   root_email  => 'test@example.local',
   mail_hub    => 'mh.example.local',
 }
-EOS
+EndOfClassDefinition
   }
 
   it 'should apply without errors' do
