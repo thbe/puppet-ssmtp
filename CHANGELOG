@@ -1,3 +1,6 @@
+0.5.10 2017-10-16 thbe <project@bendler-net.de>
+ * Update CI pipeline
+
 0.5.9 2016-08-09 thbe <project@bendler-net.de>
  * Merge git pull https://github.com/thbe/puppet-ssmtp/pull/12
 
