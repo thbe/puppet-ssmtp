@@ -1,3 +1,6 @@
+0.5.11 2017-10-18 thbe <project@bendler-net.de>
+ * Add Debian support
+
 0.5.10 2017-10-16 thbe <project@bendler-net.de>
  * Update CI pipeline
 
