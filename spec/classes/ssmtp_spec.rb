@@ -30,8 +30,6 @@ describe 'ssmtp', :type => :class do
       case facts[:osfamily]
       when 'RedHat'
         it { is_expected.to contain_exec('alternatives --set mta /usr/sbin/sendmail.ssmtp') }
-      when 'Debian'
-        it { is_expected.to contain_exec('update-alternatives --set mta /usr/sbin/sendmail.ssmtp') }
       end
     end
   end

@@ -14,12 +14,7 @@ class ssmtp::service {
 
   # sSMTP service configuration
   if $ssmtp::default_mta == 'ssmtp' {
-    if $::osfamily == 'Debian' {
-      exec { 'update-alternatives --set mta /usr/sbin/sendmail.ssmtp':
-        path   => '/bin:/sbin:/usr/bin:/usr/sbin',
-        unless => 'test /etc/alternatives/mta -ef /usr/sbin/sendmail.ssmtp',
-      }
-    } else {
+    if $::osfamily == 'RedHat' {
       exec { 'alternatives --set mta /usr/sbin/sendmail.ssmtp':
         path   => '/bin:/sbin:/usr/bin:/usr/sbin',
         unless => 'test /etc/alternatives/mta -ef /usr/sbin/sendmail.ssmtp',
