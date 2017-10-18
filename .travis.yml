@@ -10,6 +10,10 @@ before_install:
 - gem update bundler
 - gem --version
 - bundle --version
+stages:
+- test
+- acceptance
+- deploy
 script:
 - bundle exec rake $CHECK
 matrix:
@@ -17,19 +21,25 @@ matrix:
   include:
   - rvm: 2.1.9
     env: PUPPET_VERSION="~> 4.0" CHECK=test
+    stage: test
   - rvm: 2.3.1
     env: PUPPET_VERSION="~> 4.0" CHECK=test
+    stage: test
   - rvm: default
     env: PUPPET_VERSION="~> 5.0" CHECK=test
+    stage: test
   - rvm: default
     bundler_args: ''
     env: BEAKER_set=debian-7-x64 BEAKER_debug=1 PUPPET_INSTALL_TYPE=agent CHECK=beaker
+    stage: acceptance
   - rvm: default
     bundler_args: ''
     env: BEAKER_set=debian-8-x64 BEAKER_debug=1 PUPPET_INSTALL_TYPE=agent CHECK=beaker
+    stage: acceptance
   - rvm: default
     bundler_args: ''
     env: BEAKER_set=centos-7-x64 BEAKER_debug=1 PUPPET_INSTALL_TYPE=agent CHECK=beaker DEPLOY_TO_FORGE=yes
+    stage: deploy
 branches:
   only:
   - master
