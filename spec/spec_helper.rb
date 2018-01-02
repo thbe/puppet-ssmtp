@@ -8,7 +8,7 @@ end
 require 'puppetlabs_spec_helper/module_spec_helper'
 require 'rspec-puppet-facts'
 
-class RspecPuppetFacts
+include RspecPuppetFacts
 
 add_custom_fact :lsbdistid, 'CentOS', :confine => 'redhat-7-x86_64'
 add_custom_fact :lsbmajdistrelease, '7', :confine => 'redhat-7-x86_64'
