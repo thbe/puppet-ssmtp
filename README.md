@@ -114,6 +114,10 @@ Array to define the reverse aliases.
 
 Override ssmtp.conf parameter, see man 5 ssmtp.conf
 
+####`from_line_override`
+
+Override ssmtp.conf parameter, see man 5 ssmtp.conf
+
 ####`rewritedomain`
 
 Override ssmtp.conf parameter, see man 5 ssmtp.conf
