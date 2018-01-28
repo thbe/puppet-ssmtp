@@ -466,9 +466,6 @@ Metrics/ParameterLists:
 Lint/RequireParentheses:
   Enabled: false
 
-Layout/SpaceBeforeFirstArg:
-  Enabled: false
-
 Style/ModuleFunction:
   Enabled: false
 
