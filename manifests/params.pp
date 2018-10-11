@@ -19,7 +19,7 @@ class ssmtp::params {
   # Operating system specific definitions
   case $::osfamily {
     'RedHat' : {
-      $linux                            = true
+      $supported                        = true
 
       # Package definition
       $package_ssmtp                    = 'ssmtp'
@@ -29,9 +29,11 @@ class ssmtp::params {
       $config_ssmtp_conf_template       = 'ssmtp/etc/ssmtp.conf.erb'
       $config_revaliases_conf           = '/etc/ssmtp/revaliases'
       $config_revaliases_conf_template  = 'ssmtp/etc/revaliases.erb'
+      $ssmtp_conf_group                 = 'mail'
+      $revaliases_conf_group            = 'root'
     }
     'Debian' : {
-      $linux                            = true
+      $supported                       = true
 
       # Package definition
       $package_ssmtp                    = 'ssmtp'
@@ -41,9 +43,26 @@ class ssmtp::params {
       $config_ssmtp_conf_template       = 'ssmtp/etc/ssmtp.conf.erb'
       $config_revaliases_conf           = '/etc/ssmtp/revaliases'
       $config_revaliases_conf_template  = 'ssmtp/etc/revaliases.erb'
+      $ssmtp_conf_group                 = 'mail'
+      $revaliases_conf_group            = 'root'
     }
+    'FreeBSD': {
+      $supported                        = true 
+
+      # Package definitions
+      $package_ssmtp                    = 'ssmtp'
+
+      # Config definition
+      $config_ssmtp_conf                = '/usr/local/etc/ssmtp/ssmtp.conf'
+      $config_ssmtp_conf_template       = 'ssmtp/etc/ssmtp.conf.erb'
+      $config_revaliases_conf           = '/usr/local/etc/ssmtp/revaliases'
+      $config_revaliases_conf_template  = 'ssmtp/etc/revaliases.erb'
+      $ssmtp_conf_group                 = 'ssmtp'
+      $revaliases_conf_group            = 'ssmtp'
+    }
+      
     default  : {
-      $linux                            = false
+      $supported                        = false
     }
   }
 
@@ -57,8 +76,6 @@ class ssmtp::params {
   # Config file mode & ownership
   $ssmtp_conf_mode        = '0640'
   $ssmtp_conf_owner       = 'root'
-  $ssmtp_conf_group       = 'mail'
   $revaliases_conf_mode   = '0644'
   $revaliases_conf_owner  = 'root'
-  $revaliases_conf_group  = 'root'
 }

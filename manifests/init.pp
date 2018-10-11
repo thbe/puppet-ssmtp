@@ -109,7 +109,7 @@ class ssmtp (
 ) inherits ssmtp::params {
 
   # Start workflow
-  if $ssmtp::params::linux {
+  if $ssmtp::params::supported {
     class{ '::ssmtp::package': }
     -> class{ '::ssmtp::config': }
     -> class{ '::ssmtp::service': }
