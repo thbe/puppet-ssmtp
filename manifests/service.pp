@@ -11,7 +11,6 @@
 # Sample Usage: include ssmtp::service
 #
 class ssmtp::service {
-
   # sSMTP service configuration
   if $ssmtp::default_mta == 'ssmtp' {
     if $::osfamily == 'RedHat' {
@@ -21,14 +20,15 @@ class ssmtp::service {
       }
     }
     if $::osfamily == 'FreeBSD' {
-	file{ '/etc/mail/mailer.conf':
-		ensure => file,
-		mode   => $ssmtp::revaliases_conf_mode,
-		owner  => $ssmtp::revaliases_conf_owner,
-		group  => $ssmtp::revaliases_conf_group,
-		path   => '/etc/mail/mailer.conf',
-                content=> template('ssmtp/mailer.conf.erb')
-	}
+      file {
+        $ssmtp::params::config_mailer_conf:
+          ensure  => file,
+          mode    => $ssmtp::mailer_conf_mode,
+          owner   => $ssmtp::mailer_conf_owner,
+          group   => $ssmtp::mailer_conf_group,
+          path    => $ssmtp::params::config_mailer_conf,
+          content => template($ssmtp::params::config_mailer_conf_template);
+      }
     }
   }
 }

@@ -33,7 +33,7 @@ class ssmtp::params {
       $revaliases_conf_group            = 'root'
     }
     'Debian' : {
-      $supported                       = true
+      $supported                        = true
 
       # Package definition
       $package_ssmtp                    = 'ssmtp'
@@ -47,7 +47,7 @@ class ssmtp::params {
       $revaliases_conf_group            = 'root'
     }
     'FreeBSD': {
-      $supported                        = true 
+      $supported                        = true
 
       # Package definitions
       $package_ssmtp                    = 'ssmtp'
@@ -57,10 +57,13 @@ class ssmtp::params {
       $config_ssmtp_conf_template       = 'ssmtp/etc/ssmtp.conf.erb'
       $config_revaliases_conf           = '/usr/local/etc/ssmtp/revaliases'
       $config_revaliases_conf_template  = 'ssmtp/etc/revaliases.erb'
+      $config_mailer_conf               = '/etc/mail/mailer.conf'
+      $config_mailer_conf_template      = 'ssmtp/etc/mailer.conf.erb'
       $ssmtp_conf_group                 = 'ssmtp'
       $revaliases_conf_group            = 'ssmtp'
+      $mailer_conf_group                = 'root'
     }
-      
+
     default  : {
       $supported                        = false
     }
@@ -78,4 +81,6 @@ class ssmtp::params {
   $ssmtp_conf_owner       = 'root'
   $revaliases_conf_mode   = '0644'
   $revaliases_conf_owner  = 'root'
+  $mailer_conf_mode       = '0644'
+  $mailer_conf_owner      = 'root'
 }

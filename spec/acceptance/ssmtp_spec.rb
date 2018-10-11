@@ -2,8 +2,8 @@ require 'spec_helper_acceptance'
 
 describe 'ssmtp' do
   let(:manifest) {
-    <<-CLASSPARAMETER
-class { 'ssmtp': 
+<<-CLASSPARAMETER
+class { 'ssmtp':
   default_mta => 'ssmtp',
   root_email  => 'test@example.local',
   mail_hub    => 'mh.example.local',
@@ -29,7 +29,7 @@ CLASSPARAMETER
     it { should be_file }
     it { should exist }
   end
-  
+
   describe package('ssmtp') do
     it { should be_installed }
   end

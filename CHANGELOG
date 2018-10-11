@@ -1,3 +1,6 @@
+0.6.0 2018-10-11 thbe <project@bendler-net.de>
+ * Merge git pull https://github.com/thbe/puppet-ssmtp/pull/16 (FreeBSD support)
+
 0.5.12 2018-01-02 thbe <project@bendler-net.de>
  * Enhance documentation
 

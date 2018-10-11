@@ -166,8 +166,10 @@ The module has been tested on:
 
 * RedHat Enterprise Linux 5, 6, 7
 * CentOS Linux 5, 6, 7
-* Scientific Linux 5, 6
-* Ubuntu 14.04
+* Scientific Linux 5, 6, 7
+* Ubuntu 16.04
+* Debian 7, 8
+* FreeBSD 11, 12
 
 Testing on other platforms has been light and cannot be guaranteed.
 
