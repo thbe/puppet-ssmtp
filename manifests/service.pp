@@ -20,5 +20,15 @@ class ssmtp::service {
         unless => 'test /etc/alternatives/mta -ef /usr/sbin/sendmail.ssmtp',
       }
     }
+    if $::osfamily == 'FreeBSD' {
+	file{ '/etc/mail/mailer.conf':
+		ensure => file,
+		mode   => $ssmtp::revaliases_conf_mode,
+		owner  => $ssmtp::revaliases_conf_owner,
+		group  => $ssmtp::revaliases_conf_group,
+		path   => '/etc/mail/mailer.conf',
+                content=> template('ssmtp/mailer.conf.erb')
+	}
+    }
   }
 }
