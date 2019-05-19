@@ -1,55 +1,67 @@
-sudo: required
-dist: trusty
-services: docker
 language: ruby
+dist: xenial
+services: docker
 cache: bundler
-bundler_args: "--without system_tests"
+
+notifications:
+  email: project@bendler-net.de
+
 before_install:
-- rm Gemfile.lock || true
-- gem update --system
-- gem update bundler
-- gem --version
-- bundle --version
-stages:
-- test
-- acceptance
-- deploy
-script:
-- bundle exec rake $CHECK
-matrix:
-  fast_finish: true
-  include:
-  - rvm: 2.3.1
-    env: PUPPET_VERSION="~> 4.0" CHECK=test
-    stage: test
-  - rvm: default
-    env: PUPPET_VERSION="~> 5.0" CHECK=test
-    stage: test
-  - rvm: default
-    bundler_args: ''
-    env: BEAKER_set=debian-7-x64 BEAKER_debug=1 PUPPET_INSTALL_TYPE=agent CHECK=beaker
-    stage: acceptance
-  - rvm: default
-    bundler_args: ''
-    env: BEAKER_set=debian-8-x64 BEAKER_debug=1 PUPPET_INSTALL_TYPE=agent CHECK=beaker
-    stage: acceptance
-  - rvm: default
-    bundler_args: ''
-    env: BEAKER_set=centos-7-x64 BEAKER_debug=1 PUPPET_INSTALL_TYPE=agent CHECK=beaker DEPLOY_TO_FORGE=yes
-    stage: deploy
+  - rm Gemfile.lock || true
+  - gem update --system
+  - gem update bundler
+  - gem --version
+  - bundle --version
+
 branches:
   only:
-  - master
-  - "/^v\\d/"
-notifications:
-  email:
-  - project@bendler-net.de
+    - master
+    - release
+
+stages:
+  - name: build
+  - name: test
+
+script:
+  - bundle install && bundle update
+
+jobs:
+  include:
+    - stage: build
+      env: PUPPET_VERSION="~> 6.0"
+      install: bundler install && bundler update
+      script: bundle exec rake test
+      after_success: skip
+
+    - stage: test
+      env: BEAKER_set=debian9-64 BEAKER_debug=1
+      install: bundler install && bundler update
+      script: bundle exec rake beaker
+      after_success: skip
+
+    - stage: test
+      env: BEAKER_set=ubuntu1804-64 BEAKER_debug=1
+      install: bundler install && bundler update
+      script: bundle exec rake beaker
+      after_success: skip
+
+    - stage: test
+      env: BEAKER_set=centos7-64 BEAKER_debug=1 DEPLOY_TO_FORGE=yes
+      install: bundler install && bundler update
+      script: bundle exec rake beaker
+      after_success: skip
+
+#    - stage: test
+#      env: BEAKER_set=redhat8-64 BEAKER_debug=1
+#      install: bundler install && bundler update
+#      script: bundle exec rake beaker
+#      after_success: skip
+
 deploy:
   provider: puppetforge
   user: thbe
   password:
     secure: V3Po8o+vQ7Ols94PyMvNMs6rIyF5KhP5sBZ2TJZ0dpK6saCdli+tvFjcvcKiz+ckxgeH5TFGfRiQFGNon8KkRLg2kwsc8ev3VZoZUJHHWzIH0uynMRzrRK7heIgTfW77VyCWeofHiumG7PVD88lIGWfEtISuoO92NFO0CVFRYwyr4l+367ORkgrCQtsvSBICyB2ObTovmGLZvHuV+6IdZQE/0zXpWkJGSQowFzKL4BZ+blWyGbTPHOFj0snziGW2pTx7rSg3SPoD4EYG3HwBUhBoEgMhCa+PmWXAfGTO5eH9IDPXS3bnxGRZflg5C1bp3306OirmCeDMzFmCWYbUetxc5W/x5p1Z8n4Us9Aqa4mM7ua0lLi7PrtgIfRp7CPzrM1NY5pchKFEmcbM02QRoe3k3lScyzjU3db4GE2uCKX3A6TvO6lM+2XQ1Zb95kNDW3MWt5ZJDV1xd041DvlFLgoYQpWVBn+ZpqWFHO8/uQEazSMpJbgX83/55ar1fcBOCeshyXzwjJXrXqiDWLJeuckFKf2zWWJjDmJ+pqG/x6xLn3CnPc75H8zgHQjLwiQbrFAqwcX1cetD0AKZsXbfqTv8IqbSELb8aSVCWsXyt12ELcYj2Et6fhIm4YRLt8sJFdCTfKnIut9nZ0qW7FFCs3o/JKH+QjiZptK5bGyPWzM=
   on:
-    tags: true
-    all_branches: true
+    branch: release
     condition: "$DEPLOY_TO_FORGE = yes"
