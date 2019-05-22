@@ -1,18 +1,5 @@
-# Class: ssmtp::params
-#
-# This class contain the parameters for sSMTP
-#
-# Parameters:
-#  This module has no parameters
-#
-# Actions:
-#  This module has no actions
-#
-# Requires:
-#  This module has no requirements
-#
-# Sample Usage:
-#  include ssmtp::params
+# @summary This class contain the default parameters for ssmtp module
+# @example include ssmtp::param
 #
 class ssmtp::params {
 

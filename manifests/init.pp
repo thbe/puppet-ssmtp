@@ -1,10 +1,4 @@
-# Class: ssmtp
-# ===========================
-#
-# This class manage local ssmtp installation
-#
-# Parameters
-# ----------
+# @summary This module manage local ssmtp installation
 #
 # @param default_mta Boolean, if set to ssmtp, ssmtp will be set as default mta
 # @param root_email Mail address that get root mails
@@ -30,24 +24,11 @@
 # @param revaliases_conf_owner Override ssmtp.conf parameter, see man 5 ssmtp.conf
 # @param revaliases_conf_group Override ssmtp.conf parameter, see man 5 ssmtp.conf
 #
-# Examples
-# --------
-#
 # @example Declaring the class
 #    class { '::ssmtp':
 #      mail_hub   => 'mail.example.local',
 #      root_email => 'john.doe@example.local',
 #    }
-#
-# Authors
-# -------
-#
-# Thomas Bendler <project@bendler-net.de>
-#
-# Copyright
-# ---------
-#
-# Copyright 2019 Thomas Bendler, unless otherwise noted.
 #
 class ssmtp (
   $default_mta           = $ssmtp::params::default_mta,

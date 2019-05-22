@@ -80,101 +80,27 @@ class { '::ssmtp':
 }
 ```
 
-
 ## Reference
 
-### Classes
-
-* ssmtp: Main class, includes all the rest.
-* ssmtp::install: Handles the packages.
-* ssmtp::config: Handles the configuration file.
-* ssmtp::service: Handles the alternative service link.
-
-### Parameters
-
-The following parameters are available in the ssmtp module
-
-#### `default_mta`
-
-Replace the default MTA with ssmtp if set to ssmtp.
-
-#### `root_email`
-
-Specify which Email address should recieve all mails from root.
-
-#### `mail_hub`
-
-Define the mail server which should deliver all mails.
-
-#### `revaliases`
-
-Array to define the reverse aliases.
-
-#### `hostname`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `from_line_override`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `rewritedomain`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `authuser`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `authpass`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `authmethod`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `tlscert`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `tlskey`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `authuser`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `tlscafile`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `tlscadir`
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
-
-#### `require_yum` (bool, default=true)
-
-Override ssmtp.conf parameter, see man 5 ssmtp.conf
+See [https://github.com/thbe/puppet-ssmtp/blob/master/REFERENCE.md](https://github.com/thbe/puppet-ssmtp/blob/master/REFERENCE.md)
 
 ## Limitations
 
-This module has been built on and tested against Puppet 3.4 and higher.
+This module has been built on and tested against Puppet 5 and higher.
 
 The module has been tested on:
 
-* RedHat Enterprise Linux 5, 6, 7
-* CentOS Linux 5, 6, 7
-* Scientific Linux 5, 6, 7
-* Ubuntu 16.04
-* Debian 7, 8
-* FreeBSD 11, 12
+* CentOS 7
+* Debian 9
+* Ubuntu 18.04
 
 Testing on other platforms has been light and cannot be guaranteed.
-
 
 ## Development
 
 If you like to add or improve this module, feel free to fork the module and send
 me a merge request with the modification.
+
+### Contributors
+
+The list of contributors can be found at: [https://github.com/thbe/puppet-ssmtp/graphs/contributors](https://github.com/thbe/puppet-ssmtp/graphs/contributors)

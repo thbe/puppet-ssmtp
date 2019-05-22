@@ -1,14 +1,5 @@
-# Class: ssmtp::service
-#
-# This module contain the service configuration for sSMTP
-#
-# Parameters:   This module has no parameters
-#
-# Actions:      This module has no actions
-#
-# Requires:     This module has no requirements
-#
-# Sample Usage: include ssmtp::service
+# @summary This class contain the services for ssmtp module
+# @example include ssmtp::service
 #
 class ssmtp::service {
   # sSMTP service configuration
