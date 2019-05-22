@@ -6,67 +6,34 @@
 # Parameters
 # ----------
 #
-# [*default_mta*]
-# Boolean. If set to ssmtp, ssmtp will be set as default mta
-# Default: false
-# Valid values: true, false
-#
-# [*root_email*]
-#  Mail address that get root mails
-#
-# * `mail_hub`
-#  Server that is used for outgoing mail
-#
-# * `from_line_override` (default=YES)
-#  Allow mail client to override from line
-#
-# * `revaliases`
-#  Array of reverse aliases
-#
-# * `hostname`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `rewritedomain`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `authuser`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `authpass`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `authmethod`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `tlscert`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `tlskey`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `authuser`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `tlscafile`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `tlscadir`
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# * `require_yum` (bool, default=true)
-#  Override ssmtp.conf parameter, see man 5 ssmtp.conf
-#
-# Variables
-# ----------
-#
-# * `osfamily`
-#  This variable is used to determin if module can be used on current operating
-#  system or not
+# @param default_mta Boolean, if set to ssmtp, ssmtp will be set as default mta
+# @param root_email Mail address that get root mails
+# @param mail_hub Server that is used for outgoing mail
+# @param from_line_override Allow mail client to override from line (default=YES)
+# @param revaliases Array of reverse aliases
+# @param hostname Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param rewritedomain Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param authuser Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param authpass Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param authmethod Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param tlscert Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param tlskey Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param authuser Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param tlscafile Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param tlscadir Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param usetls Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param usestarttls Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param ssmtp_conf_mode Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param ssmtp_conf_owner Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param ssmtp_conf_group Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param revaliases_conf_mode Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param revaliases_conf_owner Override ssmtp.conf parameter, see man 5 ssmtp.conf
+# @param revaliases_conf_group Override ssmtp.conf parameter, see man 5 ssmtp.conf
 #
 # Examples
 # --------
 #
-# @example
+# @example Declaring the class
 #    class { '::ssmtp':
 #      mail_hub   => 'mail.example.local',
 #      root_email => 'john.doe@example.local',
@@ -76,12 +43,11 @@
 # -------
 #
 # Thomas Bendler <project@bendler-net.de>
-# Thomas Mueller <mueller@puzzle.ch>
 #
 # Copyright
 # ---------
 #
-# Copyright 2017 Thomas Bendler, unless otherwise noted.
+# Copyright 2019 Thomas Bendler, unless otherwise noted.
 #
 class ssmtp (
   $default_mta           = $ssmtp::params::default_mta,
